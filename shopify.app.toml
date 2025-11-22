@@ -1,0 +1,23 @@
+client_id = "04354fb2595c6e97553da2747595643e"
+name = "Restocking Report Bend"
+application_url = "https://restocking-report-bend.onrender.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2026-01"
+
+[[webhooks.subscriptions]]
+compliance_topics = ["customers/data_request", "customers/redact", "shop/redact"]
+uri = "https://restocking-report-bend.onrender.com/webhooks/compliance"
+
+[access_scopes]
+scopes = "read_orders,read_inventory,read_products,read_locations"
+
+[auth]
+redirect_urls = [
+  "https://restocking-report-bend.onrender.com/auth/callback",
+  "https://restocking-report-bend.onrender.com/auth/shopify/callback"
+]
